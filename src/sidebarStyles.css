@@ -1,0 +1,16 @@
+.sidebar-section p {
+    margin-bottom: 10%;
+}
+
+.sidebar-section {
+    margin-bottom: 30%
+}
+
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar {
+    margin-right: 2%;
+}

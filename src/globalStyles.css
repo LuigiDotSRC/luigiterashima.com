@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+    min-width: 650px;
+}
+
+main {
+    flex-grow: 3;
+    max-width: 60%;
+}
+
+a {
+    color: blue; 
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+    background-color: blue;
+    color: #fff;
+}
+a:visited {
+    color: blue; 
+}
+a:visited:hover {
+    color: #fff;
+}
+
+hr {
+    border: 1px solid #b5b5b5;
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+h3 {
+    color: #474747;
+    font-weight: 400;
+}

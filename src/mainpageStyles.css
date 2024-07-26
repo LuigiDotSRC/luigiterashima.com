@@ -1,0 +1,25 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20%;
+    flex-grow: 1;
+}
+
+.navbar-links {
+    display: flex;
+}
+
+.navbar-links a {
+    margin-right: 5%;
+}
+
+.fun-facts {
+    list-style: none;
+}
+
+.sub-text {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 13px;
+    color: #474747;
+}
