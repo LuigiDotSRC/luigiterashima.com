@@ -7,6 +7,7 @@ import os
 load_dotenv()
 
 DISTRIBUTION_ID = os.getenv('DISTRIBUTION_ID')
+cloudfront_client = boto3.client('cloudfront') 
 
 def create_invalidation(paths):
     """Create an invalidation for a CloudFront distribution.
@@ -14,7 +15,6 @@ def create_invalidation(paths):
     :param paths: List of paths to invalidate (e.g., ['/*'])
     :return: Invalidation ID if successful, None otherwise
     """
-    cloudfront_client = boto3.client('cloudfront')
     
     try:
         # Create the invalidation batch with unique caller reference
@@ -29,7 +29,7 @@ def create_invalidation(paths):
 
         # Create the invalidation
         response = cloudfront_client.create_invalidation(
-            DISTRIBUTION_ID,
+            DistributionId=DISTRIBUTION_ID,
             InvalidationBatch=invalidation_batch
         )
 
