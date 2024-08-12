@@ -3,24 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="mainpageStyles.css">
+    <link rel="stylesheet" href="sidebarStyles.css">
+    <link rel="stylesheet" href="globalStyles.css">
+
+    <title>~/blog/</title>
 </head>
+
 <body>
-    reading ....
+    <div class="sidebar">
+        <div style="width: 150px; height: 200px;">
+            <!-- temporary, something will be here eventually -->
+        </div>
 
-    <script>
-        // Get the query string from the URL
-        const queryString = window.location.search;
+        <div class="sidebar-section">
+            <p>links</p>
+            <hr>
+            <div class="sidebar-links">
+                <a href="https://drive.google.com/file/d/17NzKTSjKqZVlMOrf7tX5o9tXFgLEfWgF/view?usp=sharing" target="_blank" rel="noopener noreferrer">resume</a>
+                <a href="https://www.linkedin.com/in/luigi-terashima/" target="_blank" rel="noopener noreferrer">linkedin</a>
+                <a href="https://github.com/LuigiDotSRC" target="_blank" rel="noopener noreferrer">github</a>
+                <a href="mailto:luigi.terashima@gmail.com" target="_blank" rel="noopener noreferrer">email</a>
+            </div>
+        </div>
 
-        // Create a URLSearchParams object
-        const urlParams = new URLSearchParams(queryString);
+        <div class="sidebar-section">
+            <p>recent posts</p>
+            <hr>
+            <div class="sidebar-links">
+                coming soon...
+            </div>
+        </div>
 
-        // Get a specific query parameter
-        const paramValue = urlParams.get('id');
+        <div class="sidebar-section">
+            <p>recent commits</p>
+            <hr>
+            <div class="sidebar-links">
+                wip...
+            </div>
+        </div>
+    </div>
+    
+    <main>
+        <header id="top">
+            <h1>luigiterashima.com</h1>
+            <div class="navbar-links">
+                <a href="/index.html">home</a>
+                <a href="/projects.html">projects</a>
+                <a href="/blog.html">blog</a>
+            </div>
+        </header>
 
-        // Example usage
-        console.log(paramValue);        
-    </script>
+        <div>
+            <h2 class="mb-0" id="title">/blog/title...</h2>
+            <hr>
+            <p class="sub-text" id="data"></p>
+            <div id="readarea"></div>
+        </div>
+    </main>
+    
+    <script src="readBlogPost.js"></script>
 </body>
 </html>
-

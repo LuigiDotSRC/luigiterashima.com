@@ -5,7 +5,7 @@ const TABLE_NAME = 'blogs';
 const blogSection = document.getElementById('blogs'); 
 
 async function getBlogPosts() {
-    return await fetch(`${SUPABASE_URL}/rest/v1/${TABLE_NAME}?select=title,date,tags&order=date.desc`, {
+    return await fetch(`${SUPABASE_URL}/rest/v1/${TABLE_NAME}?select=id,title,date,tags&order=date.desc`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -22,14 +22,14 @@ async function getBlogPosts() {
     });
 }
 
-function createNewBlogDOM(title, date, tags) {
+function createNewBlogDOM(id, title, date, tags) {
     const blogSection = document.createElement('div');
     blogSection.className = 'blog-entry';
 
     const blogLink = document.createElement('a');
     blogLink.className = 'blog-link'; 
     blogLink.innerHTML = title;
-    blogLink.href = '#'; 
+    blogLink.href = `read.html?id=${id}`; 
 
     const blogInfo = document.createElement('p');
     blogInfo.innerHTML = (tags.length === 0) ? `${date}` : `${date}  • ${tags.join(', ')}`  
@@ -44,6 +44,6 @@ addEventListener('DOMContentLoaded', async () => {
     const posts = await getBlogPosts(); 
 
     for(let i=0; i<posts.length; i++) { 
-        blogSection.append(createNewBlogDOM(posts[i].title, posts[i].date, posts[i].tags));
+        blogSection.append(createNewBlogDOM(posts[i].id, posts[i].title, posts[i].date, posts[i].tags));
     } 
 });
