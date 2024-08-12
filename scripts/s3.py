@@ -67,5 +67,9 @@ def get_bucket_timestamps(bucket):
     except ClientError as e:
         logging.error(e)
 
+    except KeyError as e:
+        logging.error(f'bucket is empty: {e}')
+        return {} 
+
     return timestamps
 

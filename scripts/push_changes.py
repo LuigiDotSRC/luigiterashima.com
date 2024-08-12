@@ -9,6 +9,7 @@ load_dotenv()
 TIME_LENIENCY = timedelta(minutes=5)
 FILE_DIR = os.getenv('FILE_DIR')
 BUCKET_NAME = os.getenv('BUCKET_NAME')
+DISTRIBUTION_ID = os.getenv('DISTRIBUTION_ID')
 
 if __name__ == '__main__':
     updated_files = []
@@ -29,5 +30,5 @@ if __name__ == '__main__':
             updated_files.append(f'/{file_name}')
     
     if updated_files:
-        invalidation = create_invalidation(updated_files)     
+        invalidation = create_invalidation(updated_files, DISTRIBUTION_ID)     
         print(f'started invalidation | {invalidation}')

@@ -1,18 +1,14 @@
 from botocore.exceptions import ClientError
-from dotenv import load_dotenv
 import boto3
 import time
-import os 
 
-load_dotenv()
-
-DISTRIBUTION_ID = os.getenv('DISTRIBUTION_ID')
 cloudfront_client = boto3.client('cloudfront') 
 
-def create_invalidation(paths):
+def create_invalidation(paths, distribution_id):
     """Create an invalidation for a CloudFront distribution.
 
     :param paths: List of paths to invalidate (e.g., ['/*'])
+    :param distribution_id: AWS CloudFront distribution ID 
     :return: Invalidation ID if successful, None otherwise
     """
     
@@ -29,7 +25,7 @@ def create_invalidation(paths):
 
         # Create the invalidation
         response = cloudfront_client.create_invalidation(
-            DistributionId=DISTRIBUTION_ID,
+            DistributionId=distribution_id,
             InvalidationBatch=invalidation_batch
         )
 
