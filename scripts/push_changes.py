@@ -15,6 +15,7 @@ if __name__ == '__main__':
     files = get_files_in_dir(FILE_DIR)  
     bucket_timestamps = get_bucket_timestamps(BUCKET_NAME)
 
+    print(f'synchronizing deltas with ${FILE_DIR}')
     for file in files:
         file_name = os.path.basename(file)
         mod_time = get_file_modification_time(file)
